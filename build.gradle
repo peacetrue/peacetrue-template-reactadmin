@@ -1,0 +1,40 @@
+plugins {
+    id "com.github.peacetrue.gradle.build-convention" version "${peaceGradleVersion}${tailSnapshot}"
+}
+
+group "com.github.peacetrue.templates"
+version "${peaceTemplateReactadminVersion}${tailSnapshot}"
+description "React Admin 目录模板"
+
+
+dependencies {
+    testImplementation "com.github.peacetrue.template:peacetrue-template-velocity"
+    testImplementation "com.github.peacetrue.templates:peacetrue-template-gradle"
+    testImplementation "org.springframework:spring-beans"
+    testImplementation "com.github.peacetrue:peacetrue-common"
+    testImplementation "com.fasterxml.jackson.core:jackson-databind"
+    testImplementation "com.fasterxml.jackson.dataformat:jackson-dataformat-properties"
+    testImplementation "org.apache.commons:commons-io"
+}
+
+
+task templateStructure(group: "$name") {
+    doLast {
+        exec {
+            workingDir("$projectDir/src/main/resources")
+            commandLine("tree", "reactadmin")
+            standardOutput(new FileOutputStream("$projectDir/docs/antora/modules/ROOT/examples/source-file-structure.txt"))
+        }
+    }
+}
+
+task resultStructure(group: "$name") {
+    doLast {
+        exec {
+            workingDir("$projectDir/src/test/resources")
+            commandLine("tree", "learn-java")
+            standardOutput(new FileOutputStream("$projectDir/docs/antora/modules/ROOT/examples/target-file-structure.txt"))
+        }
+    }
+}
+

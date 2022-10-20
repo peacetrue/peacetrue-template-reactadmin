@@ -1,0 +1,11 @@
+name: peacetrue-template-reactadmin
+title: React Admin 目录模板
+version: master
+asciidoc:
+  attributes:
+    numbered: '@'
+    website: https://peacetrue.github.io
+    app-name: peacetrue-template-reactadmin
+start_page: ROOT:index.adoc
+nav:
+  - modules/ROOT/nav.adoc

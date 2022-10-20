@@ -1,0 +1,13 @@
+= 版本变更
+
+:numbered!: ''
+
+== 1.0.0
+
+创建一个基于 React Admin 的 React 应用。
+从 https://jsonplaceholder.typicode.com[jsonplaceholder^] 获取模拟数据，并展示用户列表。
+
+使用 `pnpm install` 时，导致问题 *TS2339: Property 'toBeInTheDocument' does not exist on type 'JestMatchers<HTMLElement>'*。
+考虑到暂不执行测试，所以删除了 App.test.tsx。
+
+

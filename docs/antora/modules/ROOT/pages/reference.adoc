@@ -1,0 +1,57 @@
+= 参考指南
+
+本文介绍 {app-name} 目录模板的详细内容。
+
+== 文件结构
+
+模板文件结构如下：
+
+[source%nowrap,txt]
+----
+include::example$source-file-structure.txt[]
+----
+
+以 learn-java 为例的结果文件结构如下：
+
+[source%nowrap,txt]
+----
+include::example$target-file-structure.txt[]
+----
+
+NOTE: 使用模板创建应用后，需要安装依赖。
+
+[[variable]]
+== 变量说明
+
+.根对象
+[%autowidth.stretch]
+|===
+|名称 |描述 |类型 |备注
+
+|repository
+|资源库属性
+|<<Repository>>
+|
+|===
+
+[[Repository]]
+.资源库
+[%autowidth.stretch]
+|===
+|名称 |描述 |类型 |备注
+
+|name
+|名称
+|字符串
+|资源库名称，存储在磁盘上的目录名称，maven 依赖坐标中 artifactId 值。约定为 *小写中划线格式*，例如：learn-java
+
+|title
+|标题
+|字符串
+|例如：学习 Java
+
+|dependencies
+|依赖
+|字符串数组
+|此值会添加到依赖配置中。例如：@peace/user
+|===

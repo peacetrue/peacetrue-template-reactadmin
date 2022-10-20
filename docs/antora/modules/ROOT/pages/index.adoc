@@ -1,0 +1,51 @@
+= 概述
+:app-name: peacetrue-template-springboot
+:website: https://peacetrue.github.io
+:foresight-repo-id:
+:imagesdir: docs/antora/modules/ROOT/assets/images
+
+image:https://img.shields.io/github/workflow/status/peacetrue/{app-name}/build/master["GitHub Workflow Status",link="https://github.com/peacetrue/{app-name}/actions"]
+image:https://snyk.io/test/github/peacetrue/{app-name}/badge.svg["Snyk",link="https://app.snyk.io/org/peacetrue"]
+image:https://api-public.service.runforesight.com/api/v1/badge/success?repoId={foresight-repo-id}["Foresight",link="https://foresight.thundra.io/repositories/github/peacetrue/{app-name}/test-runs"]
+image:https://img.shields.io/codecov/c/github/peacetrue/{app-name}/master["Codecov",link="https://app.codecov.io/gh/peacetrue/{app-name}"]
+
+//@formatter:off
+== 简介（What）
+
+{website}/{app-name}/[{app-name}] 是一个 React Admin 目录模板，
+用于创建基于 https://marmelab.com/react-admin/[React Admin^] 的 https://reactjs.org/[React^] 应用。
+
+== 背景（Why）
+
+当你想要创建一个 React Admin 应用时，会怎么做呢？
+手动创建也很简单，执行一些安装命令，但有些繁琐；
+如果要创建多个类似的应用，就变得更枯燥了。
+
+{app-name} 可以帮助你更快地创建好一个 React Admin 应用，
+同时在多个应用之间保持一致的风格。
+
+== 用法（How）
+
+配置如下依赖：
+
+[source%nowrap,gradle,subs="attributes"]
+----
+implementation "com.github.peacetrue.templates:{app-name}:1.0.0-SNAPSHOT"
+----
+
+使用目录模板，需配合目录模板引擎，
+详情参考 xref:peacetrue-template::manual.adoc#evaluate[目录模板引擎的用法]。
+
+== 参与者（Who）
+
+. peace(xiayouxue@hotmail.com)
+
+== 活动（When）
+
+初始提交于 2022-10-20，
+最近提交于 2022-10-20。
+
+== 许可证（License）
+
+https://github.com/peacetrue/{app-name}/blob/master/LICENSE[Apache License 2.0^]
+
