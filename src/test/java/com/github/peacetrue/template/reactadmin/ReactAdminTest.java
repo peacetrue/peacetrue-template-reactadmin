@@ -52,7 +52,7 @@ class ReactAdminTest {
                 ImmutableMap.<String, Object>builder()
                         .put("name", "learn-java")
                         .put("title", "学习 Java")
-                        .put("dependencies", Arrays.asList("com.github.peacetrue:peacetrue-beans"))
+                        .put("dependencies", Arrays.asList("@peace/properties", "@peace/dictionary"))
                         .build()
         );
     }
@@ -64,7 +64,7 @@ class ReactAdminTest {
     @Test
     void template() {
         List<Resource> resources = ConditionalResourcesLoader.DEFAULT.getResources("classpath:reactadmin");
-        Assertions.assertEquals(20, resources.size());
+        Assertions.assertEquals(19, resources.size());
         List<Resource> vmResources = resources.stream().filter(resource -> resource.getPath().endsWith("vm")).collect(Collectors.toList());
         Assertions.assertEquals(3, vmResources.size());
 
@@ -89,7 +89,7 @@ class ReactAdminTest {
         DirectoryTemplateEngine templateEngine = VelocityTemplateEngine.buildVelocityDirectoryTemplateEngine();
         templateEngine.evaluate("classpath:reactadmin", getOptions(), repository, targetPath);
         List<Resource> resources = ConditionalResourcesLoader.DEFAULT.getResources("file:" + targetPath);
-        Assertions.assertEquals(20, resources.size());
+        Assertions.assertEquals(19, resources.size());
         for (Resource resource : resources) {
             if (resource.isDirectory() || vmNames.stream().noneMatch(item -> resource.getPath().endsWith(item)))
                 continue;
